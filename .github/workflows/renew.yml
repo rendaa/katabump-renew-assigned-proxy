@@ -39,10 +39,10 @@ jobs:
         chmod +x ./sing-box
         echo "Generating sing-box config from PROXY_URL..."
         python proxy_handler.py
-        echo "Starting sing-box..."
         echo "------ config.json -----"
         cat config.json
         echo "------------------------"
+        echo "Starting sing-box..."
         nohup ./sing-box run -c config.json > singbox.log 2>&1 &
         sleep 3
         echo "sing-box started. PROXY_URL will be passed to action_renew.js."
